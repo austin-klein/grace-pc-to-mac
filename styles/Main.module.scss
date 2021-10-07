@@ -1,0 +1,481 @@
+@import "_mixins.scss";
+
+.nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+  background-color: white;
+
+  .container {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1230px) {
+      width: 90%;
+    }
+    @media screen and (max-width: 600px) {
+      width: 93%;
+    }
+  }
+  img {
+    width: 120px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 100px;
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+
+    div > * {
+      color: black;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 40px;
+      font-size: 1.1em;
+    }
+
+    .active > * {
+      border-bottom: 2px solid $primary-color;
+    }
+
+    .single > * {
+      &:hover {
+        cursor: pointer;
+        border-bottom: 2px solid $primary-color;
+      }
+    }
+  }
+
+  .cta {
+    @include btn;
+
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+
+  div {
+    & > * {
+      font-size: 3em;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: inherit;
+  }
+
+  & > * > * {
+    font-size: 10em;
+  }
+}
+.mobileNav {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 80px;
+  border: 1px solid rgb(185, 185, 185);
+  overflow-y: scroll;
+  padding-bottom: 120px;
+
+  @media screen and (min-width: 801px) {
+    display: none !important;
+  }
+
+  & > * {
+    width: 100%;
+    & > * {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid rgb(185, 185, 185);
+
+      display: block;
+      text-decoration: none;
+      color: black;
+      @include sub;
+      font-weight: 500;
+      padding: 30px;
+
+      &:hover,
+      &:active {
+        background-color: lightgray;
+      }
+
+      & > * {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+.slider {
+  width: 100%;
+  max-width: 2200px;
+  max-height: 1000px;
+  margin: 80px auto;
+  height: 70vh;
+  transition: 0.5s all;
+  position: relative;
+
+  .content {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      @include heading;
+      font-size: 4em;
+      line-height: 60px;
+
+      @media screen and (max-width: 550px) {
+        font-size: 2em;
+        line-height: 30px;
+      }
+    }
+    p {
+      @include text;
+      font-size: 3em;
+      margin-top: 2rem;
+
+      @media screen and (max-width: 550px) {
+        font-size: 1.7em;
+      }
+    }
+  }
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: image 3s;
+  }
+
+  @keyframes image {
+    0% {
+      opacity: 0.2;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    height: 50vh;
+  }
+}
+
+.info {
+  @include section;
+  margin-top: 5rem;
+
+  .container {
+    @include threeCol;
+
+    h1 {
+      @include sub;
+      margin: 10px 0;
+    }
+
+    p {
+      @include text;
+    }
+
+    .image {
+      width: 100%;
+      height: 300px;
+      position: relative;
+
+      @media screen and (max-width: 400px) {
+        height: 200px;
+      }
+    }
+
+    button {
+      margin-top: 5px;
+      @include btn;
+    }
+  }
+}
+
+.map {
+  @include section;
+
+  margin-top: 5rem;
+
+  iframe {
+    border: none;
+    width: 100%;
+  }
+
+  h1 {
+    @include heading;
+    margin: 10px 0;
+  }
+
+  p {
+    @include text;
+    margin: 10px 0;
+  }
+}
+
+.footer {
+  background-color: rgb(36, 36, 36);
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 5rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+    }
+
+    a {
+      color: white;
+      margin-left: 5px;
+      transition: 0.3s color;
+
+      &:hover {
+        color: lightgray;
+      }
+    }
+    .facebook {
+      width: 40px !important;
+      transition: 0.4s all;
+
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+  }
+}
+
+.topAbout {
+  @include top;
+  margin-top: 80px;
+  background-image: url("/church-2.jpeg");
+
+  @media screen and (max-width: 1000px) {
+    background-position: left;
+  }
+}
+
+.topTwoAbout {
+  @include top;
+  background-image: url("/history.png");
+  margin-top: 80px;
+}
+
+.about {
+  @include section;
+  margin-top: 5rem;
+
+  h1 {
+    @include heading;
+  }
+
+  p {
+    @include text;
+    margin: 20px 0;
+  }
+
+  a {
+    margin-left: 4px;
+    color: rgb(65, 138, 195);
+  }
+}
+
+.topEvent {
+  @include top;
+  background-image: url("/church-4.jpeg");
+  margin-top: 80px;
+}
+
+.events {
+  @include section;
+  margin-top: 5rem;
+
+  .container {
+    @include twoCol;
+    margin-top: 5rem;
+
+    h1 {
+      @include sub;
+    }
+
+    p {
+      @include text;
+    }
+  }
+}
+
+.topStaff {
+  @include top;
+  margin-top: 80px;
+  background-image: url("/leadership-2.jpeg");
+}
+
+.staff {
+  @include section;
+  margin-top: 5rem;
+
+  .container {
+    @include threeCol;
+    text-align: center;
+
+    h1 {
+      @include sub;
+      margin: 10px 0;
+    }
+
+    .image {
+      margin: 0 auto;
+      width: 80%;
+      height: 250px;
+      position: relative;
+      margin-top: 20px;
+
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
+
+      & > * {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .salm {
+    h1 {
+      @include sub;
+      margin-top: 5rem;
+    }
+
+    p {
+      @include text;
+      margin: 20px 0;
+    }
+
+    a {
+      @include text;
+      color: rgb(65, 138, 195);
+    }
+  }
+
+  .staffInfo {
+    margin-top: 4rem;
+
+    h2 {
+      margin-top: 1.5rem;
+      margin-bottom: 5px;
+      font-size: 22px;
+    }
+    p {
+      @include text;
+    }
+  }
+}
+
+.topOutreach {
+  @include top;
+  margin-top: 80px;
+  background-image: url("/outreach-3.png");
+
+  @media screen and (max-width: 500px) {
+    background-position: left;
+  }
+}
+
+.outreach {
+  @include section;
+  margin-top: 5rem;
+
+  .container {
+    @include twoCol;
+    margin-top: 10rem;
+    @media screen and (max-width: 1000px) {
+      margin-top: 5rem;
+    }
+
+    .image {
+      @media screen and (max-width: 1000px) {
+        order: -1;
+      }
+    }
+
+    .content {
+      h1 {
+        @include heading;
+      }
+
+      p {
+        @include text;
+        margin-top: 10px;
+      }
+
+      a {
+        @include text;
+        color: rgb(65, 138, 195);
+        margin: 0 4px;
+      }
+    }
+  }
+}
