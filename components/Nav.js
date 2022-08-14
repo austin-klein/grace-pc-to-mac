@@ -2,7 +2,6 @@ import styles from '../styles/Main.module.scss';
 import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 

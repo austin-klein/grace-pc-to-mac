@@ -1,4 +1,4 @@
-@import "_mixins.scss";
+@import '_mixins.scss';
 
 .nav {
   width: 100%;
@@ -311,7 +311,7 @@
 .topAbout {
   @include top;
   margin-top: 80px;
-  background-image: url("/church-2.jpeg");
+  background-image: url('/church-2.jpeg');
 
   @media screen and (max-width: 1000px) {
     background-position: left;
@@ -320,7 +320,7 @@
 
 .topTwoAbout {
   @include top;
-  background-image: url("/history.png");
+  background-image: url('/history.png');
   margin-top: 80px;
 }
 
@@ -345,7 +345,7 @@
 
 .topEvent {
   @include top;
-  background-image: url("/church-4.jpeg");
+  background-image: url('/church-4.jpeg');
   margin-top: 80px;
 }
 
@@ -370,7 +370,7 @@
 .topStaff {
   @include top;
   margin-top: 80px;
-  background-image: url("/leadership-2.jpeg");
+  background-image: url('/leadership-2.jpeg');
 }
 
 .staff {
@@ -437,7 +437,7 @@
 .topOutreach {
   @include top;
   margin-top: 80px;
-  background-image: url("/outreach-3.png");
+  background-image: url('/outreach-3.png');
 
   @media screen and (max-width: 500px) {
     background-position: left;

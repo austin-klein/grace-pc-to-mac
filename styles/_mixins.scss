@@ -14,7 +14,7 @@ $primary-color: rgb(14, 65, 206);
 }
 
 @mixin heading {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
@@ -22,7 +22,7 @@ $primary-color: rgb(14, 65, 206);
 }
 
 @mixin sub {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
@@ -30,7 +30,7 @@ $primary-color: rgb(14, 65, 206);
 }
 
 @mixin text {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
@@ -42,7 +42,7 @@ $primary-color: rgb(14, 65, 206);
   text-decoration: none;
   color: white;
   font-size: 1em;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   background-color: $primary-color;
   padding: 10px 20px;
@@ -139,7 +139,7 @@ $primary-color: rgb(14, 65, 206);
   h1 {
     font-size: 7em;
     color: white;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 
     @media screen and (max-width: 800px) {
       font-size: 5em;
